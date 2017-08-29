@@ -67,4 +67,38 @@ public class BookDaoImpl implements BookDao {
         entityManager.close();
         return book;
     }
+
+    @Override
+    public void update(Book book) {
+        /*EntityManager entityManager = emFactory.createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction() ;
+        entityTransaction.begin();
+        entityManager.merge(book) ;
+        entityTransaction.commit();
+        entityManager.close();*/
+
+        EntityManager entityManager = emFactory.createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        Book bookFromDb = entityManager.find(Book.class, book.getId()) ;
+        entityTransaction.begin();
+        bookFromDb.setAuthor(book.getAuthor());
+        bookFromDb.setTitle(book.getTitle());
+        bookFromDb.setIsbn(book.getIsbn());
+        entityTransaction.commit();
+        entityManager.close();
+    }
+
+
+    @Override
+    public void remove(Long bookId) {
+
+        EntityManager entityManager = emFactory.createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction() ;
+        Book bookFromDB = entityManager.find(Book.class, bookId);
+        entityTransaction.begin();
+        entityManager.remove(bookFromDB);
+        entityTransaction.commit();
+        entityManager.close();
+
+    }
 }

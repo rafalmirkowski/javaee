@@ -2,22 +2,23 @@ package pl.java.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 
 @Entity
+//@Table(name = "books")
 public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @Column(name = "book_id")
     private Long id;
     private String isbn;
     private String title;
     private String author;
 
-    Book() {}
+   public Book() {}
 
     public Book(String isbn, String title, String author) {
         this.isbn = isbn;

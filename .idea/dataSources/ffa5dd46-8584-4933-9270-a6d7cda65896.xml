@@ -7,8 +7,14 @@
       <Visible>1</Visible>
     </schema>
     <schema id="3" parent="1" name="information_schema"/>
-    <table id="4" parent="2" name="hibernate_sequence"/>
-    <column id="5" parent="4" name="next_val">
+    <schema id="4" parent="1" name="isa"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="penut"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sakila"/>
+    <schema id="9" parent="1" name="sys"/>
+    <table id="10" parent="2" name="hibernate_sequence"/>
+    <column id="11" parent="10" name="next_val">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
