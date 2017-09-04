@@ -23,4 +23,20 @@ public class BookDaoImpl implements BookDao {
     public Book get(Long id) {
         return em.find(Book.class, id);
     }
+
+    @Override
+    @Transactional
+    public void update(Book book) {
+        em.merge(book);
+    }
+
+    @Override
+    @Transactional
+    public void remove(Long bookId) {
+        Book objToRemove = em.find(Book.class, bookId) ;
+        em.remove(objToRemove);
+
+    }
+
+
 }
