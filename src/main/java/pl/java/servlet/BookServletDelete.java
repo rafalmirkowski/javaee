@@ -5,29 +5,31 @@ package pl.java.servlet;
 import pl.java.dao.BookDao;
 import pl.java.model.Book;
 
-import java.io.IOException;
-
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 
 
-@WebServlet("/get")
-public class GetBook extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+@WebServlet(name = "BookServletDelete", urlPatterns = "/delete")
+public class BookServletDelete extends HttpServlet{
 
     @Inject
-    private BookDao bookDao;
+    BookDao bookDao ;
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String bookId = request.getParameter("id");
-        Long id = Long.valueOf(bookId);
-        Book book = bookDao.get(id);
-        response.getWriter().println(book);
+        Long id = Long.parseLong(request.getParameter("id"));
+        bookDao.remove(id);
+        String showMessage = "Skasowano książkę";
+        request.setAttribute("showMessage", showMessage);
+        request.getRequestDispatcher("index.jsp").forward(request,response);
+
     }
+
 }

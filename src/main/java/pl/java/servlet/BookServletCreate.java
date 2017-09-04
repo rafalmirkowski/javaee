@@ -4,30 +4,28 @@ package pl.java.servlet;
 import pl.java.dao.BookDao;
 import pl.java.model.Book;
 
-import java.io.IOException;
-
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-
-@WebServlet("/save")
-public class SaveBook extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+@WebServlet(name = "BookServletCreate" , urlPatterns = "/create")
+public class BookServletCreate extends HttpServlet{
 
     @Inject
     private BookDao bookDao;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String isbn = request.getParameter("isbn");
-        String name = request.getParameter("name");
+        String title = request.getParameter("title");
         String author = request.getParameter("author");
-        Book book = new Book(isbn, name, author);
+        Book book = new Book(isbn, title, author);
         bookDao.save(book);
-        response.sendRedirect(request.getContextPath());
+        request.setAttribute("create", book);
+        request.getRequestDispatcher("index.jsp").forward(request,response);
     }
+
 }
