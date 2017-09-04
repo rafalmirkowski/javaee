@@ -17,7 +17,7 @@ public class Book implements Serializable {
     private String isbn;
   //  @Column(nullable = false)
     private String title;
- //   @Column(nullable = false)
+  //  @Column(nullable = false)
     private String author;
 
     public Book() {

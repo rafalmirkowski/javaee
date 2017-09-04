@@ -29,6 +29,9 @@
 </form>
 <br><br>
 <%--@elvariable id="book" type="pl.java.model.Book"--%>
-<c:if test="${null != book}"> ${book} </c:if>
+<c:if test="${null != create}"> ${create} </c:if>
+<c:if test="${null != get}"> ${get} </c:if>
+<c:if test="${null != update}"> ${update} </c:if>
+<c:if test="${null != showMessage}"> ${showMessage} </c:if>
 </body>
 </html>

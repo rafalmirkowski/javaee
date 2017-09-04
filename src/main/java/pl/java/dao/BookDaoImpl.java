@@ -2,6 +2,7 @@ package pl.java.dao;
 
 import pl.java.model.Book;
 
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
