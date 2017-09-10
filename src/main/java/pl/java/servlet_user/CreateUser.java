@@ -43,7 +43,7 @@ public class CreateUser extends HttpServlet {
         req.setAttribute("user", user);
         req.setAttribute("user_details", details);
         req.getRequestDispatcher("index.jsp").forward(req,resp);
-
+        resp.getWriter().println(user);
 
 
 

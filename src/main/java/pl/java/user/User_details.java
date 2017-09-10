@@ -9,10 +9,24 @@ public class User_details implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_user_details")
     private Long id ;
     private String firstname ;
     private String lastname ;
     private String address ;
+
+    @OneToOne(mappedBy = "user_details")
+    private User user ;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
 
     public Long getId() {
         return id;

@@ -18,7 +18,8 @@ public class User implements Serializable{
     @Column(nullable = false, unique = true)
     private String email ;
     @OneToOne
-    User_details user_details ;
+    @JoinColumn(name = "id_user_details")
+    private User_details user_details ;
 
     public User_details getUser_details() {
         return user_details;
