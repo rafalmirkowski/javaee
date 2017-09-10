@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "getuser", urlPatterns = "/get")
+@WebServlet(name = "GetUser", urlPatterns = "/get")
 public class GetUser extends HttpServlet{
 
     @Inject

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "createUser" , urlPatterns = "/create")
+@WebServlet(name = "CreateUser" , urlPatterns = "/create")
 public class CreateUser extends HttpServlet {
 
 
