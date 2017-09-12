@@ -1,9 +1,8 @@
-package pl.java.servlet;
+package pl.java.servlets;
 
 
 
-import pl.java.dao.BookDao;
-import pl.java.model.Book;
+import pl.java.daoInterface.InterfaceDao;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -19,13 +18,13 @@ import java.io.IOException;
 public class BookServletDelete extends HttpServlet{
 
     @Inject
-    BookDao bookDao ;
+    private InterfaceDao implementsDao;
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Long id = Long.parseLong(request.getParameter("id"));
-        bookDao.remove(id);
+        implementsDao.remove(id);
         String showMessage = "Skasowano książkę";
         request.setAttribute("showMessage", showMessage);
         request.getRequestDispatcher("index.jsp").forward(request,response);

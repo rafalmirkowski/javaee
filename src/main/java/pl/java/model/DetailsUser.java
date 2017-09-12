@@ -1,11 +1,13 @@
-package pl.java.user;
+package pl.java.model;
+
+import pl.java.model.User;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 
-public class User_details implements Serializable {
+public class DetailsUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -62,7 +64,7 @@ public class User_details implements Serializable {
 
     @Override
     public String toString() {
-        return "User_details{" +
+        return "DetailsUser{" +
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +

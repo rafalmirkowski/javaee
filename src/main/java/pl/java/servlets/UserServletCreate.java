@@ -1,13 +1,11 @@
-package pl.java.servlet_user;
+package pl.java.servlets;
 
 
-import pl.java.dao.UserDao;
-import pl.java.dao.UserDetailsDao;
-import pl.java.user.User;
-import pl.java.user.User_details;
+import pl.java.daoInterface.InterfaceDao;
+import pl.java.model.User;
+import pl.java.model.DetailsUser;
 
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,18 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "CreateUser" , urlPatterns = "/create")
-public class CreateUser extends HttpServlet {
+@WebServlet(name = "UserServletCreate" , urlPatterns = "/create")
+public class UserServletCreate extends HttpServlet {
 
 
     @Inject
-    UserDao userDao ;
-    @Inject
-    UserDetailsDao userDetailsDao ;
+    private InterfaceDao implementsDao;
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User_details details = new User_details() ;
+        DetailsUser details = new DetailsUser() ;
         details.setFirstname(req.getParameter("firstname"));
         details.setLastname(req.getParameter("lastname"));
         details.setAddress(req.getParameter("address"));
@@ -35,15 +32,16 @@ public class CreateUser extends HttpServlet {
         user.setUsername(req.getParameter("username"));
         user.setEmail(req.getParameter("email"));
         user.setPassword(req.getParameter("password"));
-        user.setUser_details(details);
+        user.setDetailsUser_(details);
 
-        userDao.saveUser(user);
-        userDetailsDao.createDetails(details);
+        implementsDao.saveUser(user);
+        implementsDao.createDetails(details);
 
         req.setAttribute("user", user);
         req.setAttribute("user_details", details);
         req.getRequestDispatcher("index.jsp").forward(req,resp);
         resp.getWriter().println(user);
+
 
 
 
