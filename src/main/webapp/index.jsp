@@ -4,18 +4,18 @@
 <html>
 <body>
 <h2>Book Manager</h2>
-<form action="create" method="POST">
+<form action="savebook" method="POST">
     <input type="text" name="isbn" placeholder="ISBN"/><br/>
     <input type="text" name="title" placeholder="Title"/><br/>
     <input type="text" name="author" placeholder="Author"/><br/>
     <input type="submit" value="Save"/>
 </form>
-<form action="get" method="GET">
+<form action="getbook" method="GET">
     <input type="number" name="id" placeholder="BookID"/><br/>
     <input type="submit" value="Get"/>
 </form>
 <h2>Update</h2>
-<form action="update" method="POST">
+<form action="updatebook" method="POST">
     <input type="number" name="id" placeholder="ID" /><br />
     <input type="text" name="isbn" placeholder="ISBN" /><br />
     <input type="text" name="name" placeholder="Name" /><br />
@@ -23,13 +23,13 @@
     <input type="submit" value="Update" />
 </form>
 <h2>Delete</h2>
-<form action="delete" method="POST">
+<form action="deletebook" method="POST">
     <input type="number" name="id" placeholder="ID" /><br />
     <input type="submit" value="Delete" />
 </form>
 <h2>User Manager</h2>
 <h3>Save user</h3>
-<form action="create" method="post">
+<form action="saveuser" method="post">
     <input type = "text" name="username" placeholder="Username" /><br />
     <input type = "text" name="email" placeholder="Email" /><br />
     <input type = "password" name="password" placeholder="Password" /><br />
@@ -40,14 +40,14 @@
 </form>
 
 <h3>Get user</h3>
-<form action="read" method="post">
+<form action="getuser" method="post">
     <input type = "text" name="id" placeholder="User Id" /><br />
     <input type="submit" value="Get" />
 </form>
-<h2>Order manager</h2>
+<%--<h2>Order manager</h2>
 
 <h3>Add client</h3>
-<form action="addclient" method="post" id="addform">
+<form action="saveclient" method="post" id="addform">
     <input type="text" name="firstName" placeholder="Client first name" />
     <br />
     <input type="text" name="lastName" placeholder="Client last name" />
@@ -58,7 +58,7 @@
 </form>
 
 <h3>Add order</h3>
-<form action="addorder" method="post">
+<form action="saveorder" method="post">
     <input type="number" name="clientId" placeholder="Client ID" />
     <br />
     <input type="text" name="productName" placeholder="Product name" />
@@ -78,12 +78,14 @@
 <form action="getorder" method="post" id="addform">
     <input type="number" name="orderId" placeholder="Order ID" />
     <input type="submit" value="Get Order" />
-</form>
+</form>--%>
+
 <br><br>
 <%--@elvariable id="book" type="pl.java.model.Book"--%>
 <c:if test="${null != create}"> ${create} </c:if>
 <c:if test="${null != get}"> ${get} </c:if>
 <c:if test="${null != update}"> ${update} </c:if>
+<c:if test="${null != user}"> ${user} ${user_details} </c:if>
 <c:if test="${null != showMessage}"> ${showMessage} </c:if>
 </body>
 </html>

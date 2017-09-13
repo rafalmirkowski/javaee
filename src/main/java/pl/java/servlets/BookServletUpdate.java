@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "BookServletUpdate", urlPatterns = "/update")
+@WebServlet(name = "BookServletUpdate", urlPatterns = "/updatebook")
 public class BookServletUpdate extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class BookServletUpdate extends HttpServlet {
         String author = request.getParameter("author");
         Book book = new Book(isbn, name, author);
         book.setId(id);
-        implementsDao.update(book);
+        implementsDao.updateBook(book);
         request.setAttribute("update", book);
         request.getRequestDispatcher("index.jsp").forward(request,response);
     }

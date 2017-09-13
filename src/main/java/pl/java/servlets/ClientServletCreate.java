@@ -1,3 +1,4 @@
+/*
 package pl.java.servlets;
 
 import pl.java.daoInterface.InterfaceDao;
@@ -12,12 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "ClientDao", urlPatterns = "/addClient")
+@WebServlet(name = "saveclient", urlPatterns = "/saveclient")
 public class ClientServletCreate extends HttpServlet {
 
 
     @Inject
-    private InterfaceDao implementsDao;;
+    private InterfaceDao implementsDao;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,3 +34,4 @@ public class ClientServletCreate extends HttpServlet {
 
 
 }
+*/

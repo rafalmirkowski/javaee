@@ -14,7 +14,7 @@ import java.io.IOException;
 
 
 
-@WebServlet(name = "BookServletDelete", urlPatterns = "/delete")
+@WebServlet(name = "BookServletDelete", urlPatterns = "/deletebook")
 public class BookServletDelete extends HttpServlet{
 
     @Inject
@@ -24,7 +24,7 @@ public class BookServletDelete extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Long id = Long.parseLong(request.getParameter("id"));
-        implementsDao.remove(id);
+        implementsDao.removeBook(id);
         String showMessage = "Skasowano książkę";
         request.setAttribute("showMessage", showMessage);
         request.getRequestDispatcher("index.jsp").forward(request,response);

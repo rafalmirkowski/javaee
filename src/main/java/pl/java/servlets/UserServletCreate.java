@@ -13,12 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "UserServletCreate" , urlPatterns = "/create")
+@WebServlet(name = "UserServletCreate" , urlPatterns = "/saveuser")
 public class UserServletCreate extends HttpServlet {
-
-
-    @Inject
-    private InterfaceDao implementsDao;
 
 
     @Override
@@ -34,13 +30,10 @@ public class UserServletCreate extends HttpServlet {
         user.setPassword(req.getParameter("password"));
         user.setDetailsUser_(details);
 
-        implementsDao.saveUser(user);
-        implementsDao.createDetails(details);
-
         req.setAttribute("user", user);
         req.setAttribute("user_details", details);
         req.getRequestDispatcher("index.jsp").forward(req,resp);
-        resp.getWriter().println(user);
+
 
 
 

@@ -1,10 +1,7 @@
 package pl.java.implementationDao;
 
-import pl.java.model.Book;
-import pl.java.model.Client;
+import pl.java.model.*;
 import pl.java.daoInterface.InterfaceDao;
-import pl.java.model.User;
-import pl.java.model.DetailsUser;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,19 +25,31 @@ public class ImplemDao implements InterfaceDao {
 
     @Override
     @Transactional
-    public void update(Book book) {
+    public void updateBook(Book book) {
         em.merge(book);
     }
 
     @Override
     @Transactional
-    public void remove(Long bookId) {
+    public void removeBook(Long bookId) {
         Book objToRemove = em.find(Book.class, bookId);
         em.remove(objToRemove);
     }
-    @Override
+   /* @Override
     @Transactional
     public void saveClient(Client client) { em.persist(client); }
+
+    @Override
+    @Transactional
+    public void saveOrder(Order order){em.persist(order);}
+
+    @Override
+    @Transactional
+    public Order getOrder(Long id){return em.find(Order.class, id) ; }
+
+    @Override
+    @Transactional
+    public Client getClient(Long id) { return em.find(Client.class, id);}*/
 
     @Override
     @Transactional
@@ -56,7 +65,7 @@ public class ImplemDao implements InterfaceDao {
 
     @Override
     @Transactional
-    public void createDetails(DetailsUser detailsUser_) {
+    public void saveDetails(DetailsUser detailsUser_) {
         em.persist(detailsUser_);
     }
 

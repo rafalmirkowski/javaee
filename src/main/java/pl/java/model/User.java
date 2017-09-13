@@ -17,16 +17,16 @@ public class User implements Serializable{
     private String password ;
     @Column(nullable = false, unique = true)
     private String email ;
-    @OneToOne
-    @JoinColumn(name = "id_user_details")
-    private DetailsUser detailsUser_;
+    @OneToOne(cascade = CascadeType.ALL)
+   // @JoinColumn(name = "id_user_details")
+    private DetailsUser detailsUser;
 
     public DetailsUser getDetailsUser_() {
-        return detailsUser_;
+        return detailsUser;
     }
 
     public void setDetailsUser_(DetailsUser detailsUser_) {
-        this.detailsUser_ = detailsUser_;
+        this.detailsUser = detailsUser_;
     }
 
     public Long getId() {

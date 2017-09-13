@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "BookServletCreate" , urlPatterns = "/create")
+@WebServlet(name = "BookServletCreate" , urlPatterns = "/savebook")
 public class BookServletCreate extends HttpServlet{
 
     @Inject

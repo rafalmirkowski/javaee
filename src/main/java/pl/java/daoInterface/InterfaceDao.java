@@ -1,20 +1,25 @@
 package pl.java.daoInterface;
 
-import pl.java.model.Book;
-import pl.java.model.Client;
-import pl.java.model.User;
-import pl.java.model.DetailsUser;
+import pl.java.model.*;
+
+
 
 public interface InterfaceDao {
 
    /* dodajemy usuwamy, update, pobieramy book*/
     void saveBook(Book book) ;
     Book getBook(Long id) ;
-    void update(Book book) ;
-    void remove(Long bookId);
-
-    /*dodajemy klienta*/
+    void updateBook(Book book) ;
+    void removeBook(Long bookId);
+/*
+    *//*dodajemy klienta*//*
     void saveClient(Client client) ;
+    *//*pobieramy zamówienie*//*
+    Client getClient(Long id) ;
+
+    *//* dodajemy order*//*
+    void saveOrder (Order order) ;
+    Order getOrder(Long id) ;*/
 
 
     /*dodajemy i pobieramy uzytkownika */
@@ -22,7 +27,7 @@ public interface InterfaceDao {
     void saveUser(User user);
 
     /*dodajemy detale , pobieramy detale */
-    void createDetails(DetailsUser detailsUser_) ;
+    void saveDetails(DetailsUser detailsUser_) ;
     DetailsUser getUserDetails(Long id) ;
 
 }

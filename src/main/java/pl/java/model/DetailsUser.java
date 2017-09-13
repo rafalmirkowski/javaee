@@ -12,13 +12,13 @@ public class DetailsUser implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user_details")
-    private Long id ;
-    private String firstname ;
-    private String lastname ;
-    private String address ;
+    private Long id;
+    private String firstname;
+    private String lastname;
+    private String address;
 
-    @OneToOne(mappedBy = "user_details")
-    private User user ;
+    @OneToOne(mappedBy = "detailsUser")
+    private User user;
 
     public User getUser() {
         return user;
@@ -27,8 +27,6 @@ public class DetailsUser implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
-
-
 
     public Long getId() {
         return id;

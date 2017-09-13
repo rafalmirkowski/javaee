@@ -1,3 +1,4 @@
+/*
 package pl.java.model;
 
 
@@ -21,6 +22,14 @@ public class Order implements Serializable {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client ;
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
     public Long getId() {
         return id;
@@ -55,3 +64,4 @@ public class Order implements Serializable {
                 '}';
     }
 }
+*/

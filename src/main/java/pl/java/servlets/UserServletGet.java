@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "UserServletGet", urlPatterns = "/get")
+@WebServlet(name = "UserServletGet", urlPatterns = "/getuser")
 public class UserServletGet extends HttpServlet{
 
     @Inject
@@ -21,7 +21,8 @@ public class UserServletGet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Long id = Long.parseLong("id") ;
+        String userId = req.getParameter("id");
+        Long id = Long.valueOf(userId) ;
         User user = implementsDao.getUser(id) ;
         req.setAttribute("user", user) ;
         req.getRequestDispatcher("index.jsp" ).forward(req, resp);

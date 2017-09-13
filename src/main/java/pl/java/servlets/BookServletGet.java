@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "BookServletGet", urlPatterns = "/get")
+@WebServlet(name = "BookServletGet", urlPatterns = "/getbook")
 public class BookServletGet extends HttpServlet {
 
     @Inject
