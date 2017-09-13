@@ -1,4 +1,4 @@
-/*
+
 package pl.java.servlets;
 
 import pl.java.daoInterface.InterfaceDao;
@@ -21,7 +21,7 @@ public class ClientServletGet extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String clientId = req.getParameter("clientId") ;
         Long id = Long.valueOf(clientId) ;
 
@@ -31,4 +31,4 @@ public class ClientServletGet extends HttpServlet {
         req.getRequestDispatcher("index.jsp" ).forward(req, resp);
     }
 }
-*/
+

@@ -1,4 +1,4 @@
-/*
+
 package pl.java.servlets;
 
 import pl.java.daoInterface.InterfaceDao;
@@ -28,10 +28,10 @@ public class ClientServletCreate extends HttpServlet {
         client.setAddress(req.getParameter("adress"));
         implementsDao.saveClient(client);
 
-        req.setAttribute("Client", client );
+        req.setAttribute("saveClient", client );
         req.getRequestDispatcher("Index.jsp").forward(req, resp);
     }
 
 
 }
-*/
+

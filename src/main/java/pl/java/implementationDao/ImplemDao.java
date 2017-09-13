@@ -35,7 +35,7 @@ public class ImplemDao implements InterfaceDao {
         Book objToRemove = em.find(Book.class, bookId);
         em.remove(objToRemove);
     }
-   /* @Override
+    @Override
     @Transactional
     public void saveClient(Client client) { em.persist(client); }
 
@@ -49,7 +49,7 @@ public class ImplemDao implements InterfaceDao {
 
     @Override
     @Transactional
-    public Client getClient(Long id) { return em.find(Client.class, id);}*/
+    public Client getClient(Long id) { return em.find(Client.class, id);}
 
     @Override
     @Transactional

@@ -11,15 +11,15 @@ public interface InterfaceDao {
     Book getBook(Long id) ;
     void updateBook(Book book) ;
     void removeBook(Long bookId);
-/*
-    *//*dodajemy klienta*//*
+
+    /*dodajemy klienta*/
     void saveClient(Client client) ;
-    *//*pobieramy zamówienie*//*
+    /*pobieramy zamówienie*/
     Client getClient(Long id) ;
 
-    *//* dodajemy order*//*
+    /* dodajemy order*/
     void saveOrder (Order order) ;
-    Order getOrder(Long id) ;*/
+    Order getOrder(Long id) ;
 
 
     /*dodajemy i pobieramy uzytkownika */
