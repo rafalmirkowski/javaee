@@ -1,4 +1,4 @@
-package pl.java.user;
+package pl.java.model;
 
 
 import javax.persistence.*;
@@ -17,16 +17,15 @@ public class User implements Serializable{
     private String password ;
     @Column(nullable = false, unique = true)
     private String email ;
-    @OneToOne
-    @JoinColumn(name = "id_user_details")
-    private User_details user_details ;
+    @OneToOne(cascade = CascadeType.ALL)
+    private DetailsUser detailsUser;
 
-    public User_details getUser_details() {
-        return user_details;
+    public DetailsUser getDetailsUser() {
+        return detailsUser;
     }
 
-    public void setUser_details(User_details user_details) {
-        this.user_details = user_details;
+    public void setDetailsUser(DetailsUser detailsUser) {
+        this.detailsUser = detailsUser;
     }
 
     public Long getId() {

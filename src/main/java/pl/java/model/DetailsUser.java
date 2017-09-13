@@ -1,22 +1,23 @@
-package pl.java.user;
+package pl.java.model;
+
+import pl.java.model.User;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 
-public class User_details implements Serializable {
+public class DetailsUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user_details")
-    private Long id ;
-    private String firstname ;
-    private String lastname ;
-    private String address ;
+    private Long id;
+    private String firstname;
+    private String lastname;
+    private String address;
 
-    @OneToOne(mappedBy = "user_details")
-    private User user ;
+    @OneToOne(mappedBy = "detailsUser")
+    private User user;
 
     public User getUser() {
         return user;
@@ -25,8 +26,6 @@ public class User_details implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
-
-
 
     public Long getId() {
         return id;
@@ -62,7 +61,7 @@ public class User_details implements Serializable {
 
     @Override
     public String toString() {
-        return "User_details{" +
+        return "DetailsUser{" +
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
