@@ -40,7 +40,7 @@
 </form>
 
 <h3>Get user</h3>
-<form action="getuser" method="post">
+<form action="getuser" method="get">
     <input type = "text" name="id" placeholder="User Id" /><br />
     <input type="submit" value="Get" />
 </form>

@@ -16,6 +16,8 @@ import java.io.IOException;
 @WebServlet(name = "UserServletCreate" , urlPatterns = "/saveuser")
 public class UserServletCreate extends HttpServlet {
 
+    @Inject
+    private InterfaceDao implementsDao;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,7 +30,8 @@ public class UserServletCreate extends HttpServlet {
         user.setUsername(req.getParameter("username"));
         user.setEmail(req.getParameter("email"));
         user.setPassword(req.getParameter("password"));
-        user.setDetailsUser_(details);
+        user.setDetailsUser(details);
+        implementsDao.saveUser(user);
 
         req.setAttribute("user", user);
         req.setAttribute("user_details", details);

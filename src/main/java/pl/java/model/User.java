@@ -18,15 +18,14 @@ public class User implements Serializable{
     @Column(nullable = false, unique = true)
     private String email ;
     @OneToOne(cascade = CascadeType.ALL)
-   // @JoinColumn(name = "id_user_details")
     private DetailsUser detailsUser;
 
-    public DetailsUser getDetailsUser_() {
+    public DetailsUser getDetailsUser() {
         return detailsUser;
     }
 
-    public void setDetailsUser_(DetailsUser detailsUser_) {
-        this.detailsUser = detailsUser_;
+    public void setDetailsUser(DetailsUser detailsUser) {
+        this.detailsUser = detailsUser;
     }
 
     public Long getId() {
