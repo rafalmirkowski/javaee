@@ -4,6 +4,7 @@ package pl.java.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -15,13 +16,28 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_order")
     private Long id ;
-    @Column(name = "product", nullable = false)
-    private String product ;
+    @ManyToMany
+    @JoinTable(name = "order_products",
+            joinColumns = {@JoinColumn(name = "order_id",
+            referencedColumnName = "id_order")},
+            inverseJoinColumns = {@JoinColumn(name = "product_id",
+            referencedColumnName = "id_product")}
+            )
+    @Column(name = "product_list")
+    private List<Product> products ;
     @Column(name = "details" , length = 512)
     private String orderDetails ;
     @ManyToOne
- //   @JoinColumn(name = "client_id")
+    @JoinColumn(name = "client_id")
     private Client client ;
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProduct(List<Product> products) {
+        this.products = products;
+    }
 
     public Client getClient() {
         return client;
@@ -39,14 +55,6 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public String getProduct() {
-        return product;
-    }
-
-    public void setProduct(String product) {
-        this.product = product;
-    }
-
     public String getOrderDetails() {
         return orderDetails;
     }
@@ -59,9 +67,11 @@ public class Order implements Serializable {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", product='" + product + '\'' +
+                ", products=" + products +
                 ", orderDetails='" + orderDetails + '\'' +
+                ", client=" + client +
                 '}';
     }
 }
+
 

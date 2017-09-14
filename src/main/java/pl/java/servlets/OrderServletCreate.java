@@ -25,7 +25,7 @@ public class OrderServletCreate extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Order order = new Order() ;
         order.setOrderDetails(req.getParameter("orderDetails"));
-        order.setProduct(req.getParameter("productName"));
+
 
         String clientId = req.getParameter("clientId");
         Long id = Long.valueOf(clientId) ;

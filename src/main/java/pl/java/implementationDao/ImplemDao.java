@@ -74,4 +74,8 @@ public class ImplemDao implements InterfaceDao {
     public DetailsUser getUserDetails(Long id) {
         return em.find(DetailsUser.class, id);
     }
+
+    @Override
+    @Transactional
+    public void saveProduct(Product product){ em.persist(product);}
 }

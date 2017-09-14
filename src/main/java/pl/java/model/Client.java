@@ -22,8 +22,9 @@ public class Client implements Serializable {
     private String lastName ;
     @Column(name = "address", nullable = false)
     private String address ;
-  //  @OneToMany(mappedBy = "client")
+   // @OneToMany(mappedBy = "client")
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Order_Id")
     private List<Order> orders ;
 
 

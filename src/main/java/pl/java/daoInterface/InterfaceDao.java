@@ -30,4 +30,9 @@ public interface InterfaceDao {
     void saveDetails(DetailsUser detailsUser_) ;
     DetailsUser getUserDetails(Long id) ;
 
+
+    /*Zapisuje produkty*/
+    void saveProduct(Product product) ;
+
+
 }
