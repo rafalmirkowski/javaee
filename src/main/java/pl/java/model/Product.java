@@ -24,6 +24,18 @@ public class Product implements Serializable {
     @ManyToMany(mappedBy = "products")
     private List<Order> orders ;
 
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
     public String getId() {
         return id;
     }

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "addproductorder", urlPatterns = "/addproductorder")
-public class AddProductOrder extends HttpServlet{
+public class ProductOrderServletCreate extends HttpServlet{
 
     @Inject
     InterfaceDao em ;
@@ -31,6 +31,8 @@ public class AddProductOrder extends HttpServlet{
         Order order = em.getOrder(idO) ;
 
         order.getProducts().add(product) ;
+
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
 
     }
 }

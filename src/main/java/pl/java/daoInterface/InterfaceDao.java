@@ -34,5 +34,8 @@ public interface InterfaceDao {
     /*Zapisuje produkty*/
     void saveProduct(Product product) ;
 
+    /*pobieramy produkt*/
+    Product getProduct(Long id) ;
+
 
 }
