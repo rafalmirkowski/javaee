@@ -25,11 +25,11 @@ public class ClientServletCreate extends HttpServlet {
         Client client = new Client() ;
         client.setFirstName(req.getParameter("firstName"));
         client.setLastName(req.getParameter("lastName"));
-        client.setAddress(req.getParameter("adress"));
+        client.setAddress(req.getParameter("address"));
         implementsDao.saveClient(client);
 
         req.setAttribute("saveClient", client );
-        req.getRequestDispatcher("Index.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
 
