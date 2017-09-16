@@ -12,16 +12,17 @@ public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_product")
+    @Column(name = "idProduct")
     private String id;
 
-    @Column(name = "product_price", nullable = false)
+    @Column(name = "productName", nullable = false)
     private String name;
-    @Column(name = "product_price")
+    @Column(name = "productPrice")
     private Double price;
-    @Column(name = "product_details")
+    @Column(name = "productDetails")
     private String details;
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER)
     private List<Order> orders ;
 
     public void setPrice(Double price) {

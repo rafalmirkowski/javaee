@@ -14,14 +14,14 @@ public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_order")
+    @Column(name = "idOrder")
     private Long id ;
     @ManyToMany
     @JoinTable(name = "order_products",
             joinColumns = {@JoinColumn(name = "order_id",
-            referencedColumnName = "id_order")},
+            referencedColumnName = "idOrder")},
             inverseJoinColumns = {@JoinColumn(name = "product_id",
-            referencedColumnName = "id_product")}
+            referencedColumnName = "idProduct")}
             )
     @Column(name = "product_list")
     private List<Product> products ;
