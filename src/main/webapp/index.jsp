@@ -44,7 +44,7 @@
     <input type = "text" name="id" placeholder="User Id" /><br />
     <input type="submit" value="Get" />
 </form>
-<%--<h2>Order manager</h2>
+<h2>Order manager</h2>
 
 <h3>Add client</h3>
 <form action="saveclient" method="post" id="addform">
@@ -69,16 +69,16 @@
 </form>
 
 <h3>Get client</h3>
-<form action="getclient" method="post" id="addform">
+<form action="getclient" method="get" id="addform">
     <input type="number" name="clientId" placeholder="Client ID" />
     <input type="submit" value="Get Client" />
 </form>
 
 <h3>Get order</h3>
-<form action="getorder" method="post" id="addform">
+<form action="getorder" method="get" id="addform">
     <input type="number" name="orderId" placeholder="Order ID" />
     <input type="submit" value="Get Order" />
-</form>--%>
+</form>
 
 <br><br>
 <%--@elvariable id="book" type="pl.java.model.Book"--%>
@@ -86,6 +86,10 @@
 <c:if test="${null != get}"> ${get} </c:if>
 <c:if test="${null != update}"> ${update} </c:if>
 <c:if test="${null != user}"> ${user} ${user_details} </c:if>
+<c:if test="${null != saveClient}"> ${saveClient} </c:if>
+<c:if test="${null != getClient}"> ${getClient} </c:if>
+<c:if test="${null != saveOrder}"> ${saveOrder} </c:if>
+<c:if test="${null != getOrder}"> ${getOrder} </c:if>
 <c:if test="${null != showMessage}"> ${showMessage} </c:if>
 </body>
 </html>

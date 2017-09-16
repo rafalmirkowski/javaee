@@ -1,4 +1,4 @@
-/*
+
 package pl.java.servlets;
 
 import pl.java.daoInterface.InterfaceDao;
@@ -32,14 +32,14 @@ public class OrderServletCreate extends HttpServlet {
         Client client = implementsDao.getClient(id);
         order.setClient(client);
 
-        */
-/*Zapisuję dane do bazy*//*
+
+/*Zapisuję dane do bazy*/
 
 
         implementsDao.saveOrder(order);
 
-        req.setAttribute("getOrder", order);
+        req.setAttribute("saveOrder", order);
         req.getRequestDispatcher("index.jsp").forward(req,resp);
     }
 }
-*/
+

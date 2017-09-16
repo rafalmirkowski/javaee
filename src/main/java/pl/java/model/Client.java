@@ -1,4 +1,4 @@
-/*
+
 package pl.java.model;
 
 import pl.java.model.Order;
@@ -22,7 +22,8 @@ public class Client implements Serializable {
     private String lastName ;
     @Column(name = "address", nullable = false)
     private String address ;
-    @OneToMany(mappedBy = "client")
+  //  @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "client",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Order> orders ;
 
 
@@ -77,4 +78,4 @@ public class Client implements Serializable {
                 '}';
     }
 }
-*/
+

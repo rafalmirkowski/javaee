@@ -1,4 +1,4 @@
-/*
+
 package pl.java.servlets;
 
 import pl.java.daoInterface.InterfaceDao;
@@ -23,7 +23,7 @@ public class OrderServletGet extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String orderId = req.getParameter("orderId") ;
         Long id = Long.valueOf(orderId);
@@ -36,4 +36,4 @@ public class OrderServletGet extends HttpServlet {
 
     }
 }
-*/
+

@@ -1,4 +1,4 @@
-/*
+
 package pl.java.model;
 
 
@@ -20,7 +20,7 @@ public class Order implements Serializable {
     @Column(name = "details" , length = 512)
     private String orderDetails ;
     @ManyToOne
-    @JoinColumn(name = "client_id")
+ //   @JoinColumn(name = "client_id")
     private Client client ;
 
     public Client getClient() {
@@ -64,4 +64,4 @@ public class Order implements Serializable {
                 '}';
     }
 }
-*/
+
