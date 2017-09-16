@@ -29,7 +29,7 @@ public class ClientServletCreate extends HttpServlet {
         implementsDao.saveClient(client);
 
         req.setAttribute("saveClient", client );
-        req.getRequestDispatcher("Index.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
 
