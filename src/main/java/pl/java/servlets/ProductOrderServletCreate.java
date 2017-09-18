@@ -31,6 +31,7 @@ public class ProductOrderServletCreate extends HttpServlet{
         Order order = em.getOrder(idO) ;
 
         order.getProducts().add(product) ;
+        em.updateOrder(order);
 
         req.getRequestDispatcher("index.jsp").forward(req, resp);
 

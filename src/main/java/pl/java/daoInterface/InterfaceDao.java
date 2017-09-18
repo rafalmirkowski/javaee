@@ -20,6 +20,7 @@ public interface InterfaceDao {
     /* dodajemy order*/
     void saveOrder (Order order) ;
     Order getOrder(Long id) ;
+    void updateOrder(Order order) ;
 
 
     /*dodajemy i pobieramy uzytkownika */
@@ -36,6 +37,8 @@ public interface InterfaceDao {
 
     /*pobieramy produkt*/
     Product getProduct(Long id) ;
+
+
 
 
 }

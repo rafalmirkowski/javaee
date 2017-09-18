@@ -28,10 +28,11 @@ public class OrderServletGet extends HttpServlet {
         String orderId = req.getParameter("orderId") ;
         Long id = Long.valueOf(orderId);
         Order order = implementsDao.getOrder(id) ;
-        order.getProducts().size() ;
+      //  Order order = implementsDao.updateOrder(id);
+        //    order.getProducts().size() ;
 
-        String orderDesc = order.toString();
-        resp.getWriter().println(orderDesc);
+      //  String orderDesc = order.toString();
+      //  resp.getWriter().println(orderDesc);
 
 
         req.setAttribute("getOrder", order) ;

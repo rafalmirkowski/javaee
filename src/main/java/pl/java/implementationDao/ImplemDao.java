@@ -49,6 +49,10 @@ public class ImplemDao implements InterfaceDao {
 
     @Override
     @Transactional
+    public void updateOrder(Order order){em.merge(order); }
+
+    @Override
+    @Transactional
     public Client getClient(Long id) { return em.find(Client.class, id);}
 
     @Override
