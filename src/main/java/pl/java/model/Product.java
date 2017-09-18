@@ -1,33 +1,34 @@
 package pl.java.model;
 
 
-import java.io.Serializable;
-import java.util.List;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "product")
 public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_product")
-    private Long id;
-    @Column(name = "product_name", nullable = false)
-    private String name;
-    @Column(name = "price")
-    private Double price;
-    @Column(name = "details")
-    private String details;
-    @ManyToMany(mappedBy = "products")
-    private List<Order> orders;
+    private String id;
+    private String name ;
+    private Double price ;
+    private String category ;
 
+    public Product() {
+    }
 
-    public Long getId() {
+    public Product(String name, Double price, String category) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -47,30 +48,11 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public String getDetails() {
-        return details;
+    public String getCategory() {
+        return category;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
-    }
-
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", details='" + details + '\'' +
-                ", orders=" + orders +
-                '}';
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
