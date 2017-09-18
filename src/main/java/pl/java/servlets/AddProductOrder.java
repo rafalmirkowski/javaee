@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AddProductOrder extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    @PersistenceUnit(name = "myPersistenceUnit")
+   @PersistenceUnit(name = "myPersistenceUnit")
     private EntityManagerFactory emf;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
