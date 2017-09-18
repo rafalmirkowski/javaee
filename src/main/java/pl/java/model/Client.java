@@ -23,7 +23,7 @@ public class Client implements Serializable {
     @Column(name = "address", nullable = false)
     private String address ;
   //  @OneToMany(mappedBy = "client")
-    @OneToMany(mappedBy = "client",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "client",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Order> orders ;
 
 

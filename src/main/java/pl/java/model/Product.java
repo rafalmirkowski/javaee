@@ -1,41 +1,27 @@
 package pl.java.model;
 
-import javax.persistence.*;
+
 import java.io.Serializable;
 import java.util.List;
-
+import javax.persistence.*;
 
 @Entity
 @Table(name = "product")
-
 public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idProduct")
+    @Column(name = "id_product")
     private Long id;
-
-    @Column(name = "productName", nullable = false)
+    @Column(name = "product_name", nullable = false)
     private String name;
-    @Column(name = "productPrice")
+    @Column(name = "price")
     private Double price;
-    @Column(name = "productDetails")
+    @Column(name = "details")
     private String details;
-    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER)
-    private List<Order> orders ;
+    @ManyToMany(mappedBy = "products")
+    private List<Order> orders;
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
 
     public Long getId() {
         return id;
@@ -57,7 +43,7 @@ public class Product implements Serializable {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -69,13 +55,22 @@ public class Product implements Serializable {
         this.details = details;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
-                ", price='" + price + '\'' +
+                ", price=" + price +
                 ", details='" + details + '\'' +
+                ", orders=" + orders +
                 '}';
     }
 }

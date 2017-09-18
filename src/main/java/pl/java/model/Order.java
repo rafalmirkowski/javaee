@@ -2,49 +2,36 @@
 package pl.java.model;
 
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+
+import javax.persistence.*;
 
 
 @Entity
 @Table(name = "client_order")
 public class Order implements Serializable {
-
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idOrder")
-    private Long id ;
+    @Column(name = "id_order")
+    private Long id;
     @ManyToMany
     @JoinTable(name = "order_products",
-            joinColumns = {@JoinColumn(name = "order_id",
-            referencedColumnName = "idOrder")},
-            inverseJoinColumns = {@JoinColumn(name = "product_id",
-            referencedColumnName = "idProduct")}
-            )
-    @Column(name = "product_list")
-    private List<Product> products ;
-    @Column(name = "details" , length = 512)
-    private String orderDetails ;
+            joinColumns = {@JoinColumn(name = "order_id", referencedColumnName = "id_order")},
+            inverseJoinColumns = {@JoinColumn(name = "product_id", referencedColumnName = "id_product")}
+    )
+    private List<Product> products;
+    @Column(name = "details", length = 512)
+    private String orderDetails;
     @ManyToOne
     @JoinColumn(name = "client_id")
-    private Client client ;
+    private Client client;
 
-    public List<Product> getProducts() {
-        return products;
-    }
 
-    public void setProduct(List<Product> products) {
-        this.products = products;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public Long getId() {
@@ -55,6 +42,14 @@ public class Order implements Serializable {
         this.id = id;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
     public String getOrderDetails() {
         return orderDetails;
     }
@@ -63,15 +58,12 @@ public class Order implements Serializable {
         this.orderDetails = orderDetails;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", products=" + products +
-                ", orderDetails='" + orderDetails + '\'' +
-                ", client=" + client +
-                '}';
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
-
 
