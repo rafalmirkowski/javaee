@@ -1,7 +1,7 @@
 package pl.java.servlets;
 
 
-import com.sun.deploy.net.HttpRequest;
+
 import pl.java.model.Product;
 
 import javax.persistence.*;
@@ -22,13 +22,13 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
-        Boolean add = Boolean.parseBoolean(req.getParameter("add")) ;
+        String addProduct = req.getParameter("add") ;
+        Boolean add = Boolean.valueOf(addProduct) ;
         if(add){
             addProduct(req);
             resp.sendRedirect(req.getContextPath());
         }else {
-            getProduct(req);
+            getProducts(req);
             req.getRequestDispatcher("result.jsp").forward(req, resp);
         }
     }
@@ -46,7 +46,7 @@ public class ProductServlet extends HttpServlet {
         em.close();
     }
 
-    private void getProduct(HttpServletRequest request) {
+    private void getProducts(HttpServletRequest request) {
         String useQuery = request.getParameter("query");
         EntityManager em = emf.createEntityManager();
         TypedQuery<Product> query = em.createQuery(useQuery, Product.class) ;

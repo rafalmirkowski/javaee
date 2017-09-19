@@ -2,7 +2,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: rafal
-  Date: 9/18/17
+  Date: 9/18/1
   Time: 7:42 PM
   To change this template use File | Settings | File Templates.
 --%>
@@ -33,7 +33,7 @@
                         <td>${products.id}</td>
                         <td>${products.name}</td>
                         <td>${products.price}</td>
-                        <td>${products.catgory}</td>
+                        <td>${products.category}</td>
                     </tr>
                 </c:forEach>
             </tbody>
