@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="08663f85-5649-43eb-bcb7-f636652deed6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JpaEEzCDI.iml" afterPath="$PROJECT_DIR$/JpaEEzCDI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/java/model/Product.java" afterPath="$PROJECT_DIR$/src/main/java/pl/java/model/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/java/servlets/ProductServlet.java" afterPath="$PROJECT_DIR$/src/main/java/pl/java/servlets/ProductServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/result.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/result.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +56,8 @@
       <file leaf-file-name="result.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/result.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+            <state relative-caret-position="138">
+              <caret line="42" column="63" lean-forward="true" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -416,12 +412,12 @@
       <workItem from="1505549077028" duration="6445000" />
       <workItem from="1505680346012" duration="12981000" />
       <workItem from="1505770548123" duration="1739000" />
-      <workItem from="1505806475629" duration="3550000" />
+      <workItem from="1505806475629" duration="4669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50553000" />
+    <option name="totallyTimeSpent" value="51672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="127" width="1301" height="772" extended-state="6" />
@@ -649,8 +645,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/result.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        <state relative-caret-position="138">
+          <caret line="42" column="63" lean-forward="true" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
           <folding />
         </state>
       </provider>
