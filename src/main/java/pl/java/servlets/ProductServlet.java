@@ -19,6 +19,16 @@ public class ProductServlet extends HttpServlet {
     @PersistenceUnit(name = "myPersistenceUnit")
     private EntityManagerFactory emf ;
 
+
+  /*  @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Product> query = em.createNamedQuery("Product.findAllOrderByPrice", Product.class) ;
+        List<Product> resultList = query.getResultList() ;
+        req.setAttribute("products", resultList);
+        req.getRequestDispatcher("result.jsp").forward(req, resp);
+    }*/
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

@@ -5,6 +5,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "product")
+@NamedQueries({
+@NamedQuery(name = "Product.findAll", query = "SELECT c FROM Product c"),
+@NamedQuery(name = "Product.findAllOrderByPrice", query = "SELECT c FROM Product c ORDER BY c.price")})
 public class Product implements Serializable {
 
     @Id
